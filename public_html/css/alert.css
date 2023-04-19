@@ -1,0 +1,27 @@
+/* The alert message box */
+.alertSuccess {
+    background: #90ee90;
+    border: 1px #189a18 solid;
+    color: #072c07;
+    width: 70%;
+    display: block;
+    margin: auto;
+}
+
+/* The close button */
+.closealert {
+    margin-left: 15px;
+    color: #072c07;
+    font-weight: bold;
+    display: flex;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* When moving the mouse over the close button */
+.closealert:hover {
+    color: #0e580e;
+}

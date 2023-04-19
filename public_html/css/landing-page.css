@@ -1,0 +1,23 @@
+@import url("https://fonts.googleapis.com/css2?family=Sigmar+One&display=swap");
+
+body {
+    /* background-image: linear-gradient(180deg, #f9f7e3, #fff) !important; */
+    background-image: url("/../img/i01_5-2.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: "Sigmar One", cursive;
+}
+
+h1 {
+    position: absolute;
+    top: 25rem;
+    margin-left: 38.5rem;
+    color: #0df4ba;
+    font-size: 40pt;
+    text-shadow: 2px 2px 8px #444444;
+}
+
+img {
+    border: hidden; /* 
+    position: relative; */
+}
