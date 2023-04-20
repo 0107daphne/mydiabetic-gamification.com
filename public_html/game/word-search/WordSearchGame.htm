@@ -46,31 +46,39 @@
             <button id="button-reset">Reset</button>
                     </div> -->
 
-                    <div id="timer" style="color:white; font-size:25px;">Time remaining: 00:00</div>
+                    <div id="timer" style="color:white; font-size:25px;"></div>
                     <div id="grid">
                         <!-- your word search grid goes here -->
                     </div>
                     <script>
-                        var timeLimit = 200; // in seconds
-                        var timer = document.getElementById("timer");
-                        var grid = document.getElementById("grid");
-                        var intervalId = setInterval(function() {
-                            timeLimit--;
-                            var minutes = Math.floor(timeLimit / 60);
-                           var seconds = timeLimit % 60;
-                            timer.innerHTML = "Time remaining: " +
-                                (minutes < 10 ? "0" + minutes : minutes) + ":" +
-                                (seconds < 10 ? "0" + seconds : seconds);
-                            if (timeLimit <= 0) {
-                                clearInterval(intervalId);
-                                alert("Time's up! Game over.");
-                                grid.style.opacity = "0.5";
-                                // add more game over logic here
+                        const timerDiv = document.getElementById("timer");
+                        let startTime = Date.now();
+
+                        function updateTimer() {
+                            const currentTime = Date.now();
+                            const elapsedTime = currentTime - startTime;
+                            const seconds = Math.floor(elapsedTime / 1000);
+                            const minutes = Math.floor(seconds / 60);
+                            const hours = Math.floor(minutes / 60);
+                            const formattedTime = `${hours.toString().padStart(2, "0")}:${minutes
+                            .toString()
+                            .padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`;
+                            timerDiv.textContent = formattedTime;
+                        }
+
+                        const intervalId = setInterval(updateTimer, 1000);
+
+                        // Check for completion of word search game
+                        function checkGameCompletion() {
+                            if (foundWords.length === 17) {
+                            clearInterval(intervalId);
                             }
-                            else if (gameWon) {
-                                clearInterval(intervalId);
-                            }
-                        }, 1000);
+                        }
+
+                        // Call the checkGameCompletion function from the external JavaScript file
+                        window.addEventListener("load", () => {
+                            checkGameCompletion();
+                        });
                     </script>
 
         <script src="WordSearchGame.js" ></script>
