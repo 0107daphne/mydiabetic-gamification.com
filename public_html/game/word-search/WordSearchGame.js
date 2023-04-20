@@ -196,6 +196,10 @@ WordSearch.Splash.prototype = {
 		}
 	};
 
+
+    const foundWords = [];
+
+    // Game logic to find words and add them to the foundWords array
 WordSearch.Game = function (game)
 	{
 	this.letters = null;
@@ -422,6 +426,7 @@ WordSearch.Game.prototype = {
 			if (this.foundWords.length == 17)
 				{
 				this.gameWon();
+                clearInterval(intervalId);
 				}
 			}
 
@@ -720,6 +725,7 @@ WordSearch.Game.prototype = {
 
 
 WordSearch
+
 
 // SETTING THE DEFAULT RENDERER MODE
 var rendererMode = Phaser.WEBGL;
