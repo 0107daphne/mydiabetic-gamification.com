@@ -1,3 +1,3 @@
 # mydiabetic-gamification.com
-This is not my project.
-I assisted in making edits to the games as well as adding a game.
+There are error(s) yet to be fixed in order to serve project. 
+-Error: "Could not open input file: artisan."
